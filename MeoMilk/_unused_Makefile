@@ -1,0 +1,43 @@
+# copied from my last proj
+
+Output := Test.exe
+# LibDir := ""
+# Libs := -lglu32 -lopengl32 -lglfw3 -lgdi32 -lglew32 -lFreeImage 
+IncludeDir := ./External;./Asset
+ShaderDir := ./Asset/Shaders
+ExCommands := -g -Wall -std=gnu++11 -m32 -static
+Cpps := $(wildcard *.cpp)
+Objs := $(Cpps:.cpp=.o)
+Deps := $(wildcard *.d)
+Sdhs := $(subst .sdr,.sdh,$(wildcard $(ShaderDir)/*.sdr))
+IncludeDir := $(subst ;, -I,$(IncludeDir))
+
+ifneq ($(strip $(Deps)),0)
+include $(Deps)
+endif
+
+all : 
+	@echo $(IncludeDir)
+	@rm -f Output
+	@rm -f $(Objs)
+	@make Output
+
+Output : $(Sdhs) $(Objs) 
+	@echo " Linking $(notdir $<)"
+	@g++ -L$(LibDir) -o "$(Output)" $(Objs) $(Libs) -m32 -static-libgcc -static-libstdc++ -Wl,-Bstatic -Wl,--as-needed
+	@echo " Finished linking $(notdir $<)"
+
+%.sdh : %.sdr
+	@echo " Converting $(notdir $<) -> $(notdir $@)"
+	#@$(ShaderDir)/conv $< $@ $(basename $(notdir $<))
+	@echo " Finished converting $(notdir $<) -> $(notdir $@)"
+
+$(Objs) : %.o : %.cpp
+	@echo " Building $(notdir $<) -> $(notdir $@)"
+	@g++ -I$(IncludeDir) -c -MMD -MP -MF"$(@:.o=.d)" -MT"$(@)" -o "$@" "$<" $(ExCommands)
+	@echo " Finished building $(notdir $<) -> $(notdir $@)"
+
+clean : 
+	rm -f *.o
+
+.PHONY : all clean

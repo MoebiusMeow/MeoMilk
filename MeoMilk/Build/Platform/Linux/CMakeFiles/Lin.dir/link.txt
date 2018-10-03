@@ -1,0 +1,1 @@
+/usr/bin/c++  -DDEBUG -Wall -g  -rdynamic CMakeFiles/Lin.dir/testlin.cpp.o  -o Lin ../../Framework/Common/libCommon.a -lxcb -lX11 -lX11-xcb -lGL -lGLU 

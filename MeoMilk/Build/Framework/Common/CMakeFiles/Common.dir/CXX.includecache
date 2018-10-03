@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../Framework/Interface/IApplication.hpp
+Interface.hpp
+../Framework/Interface/Interface.hpp
+IRuntimeModule.hpp
+../Framework/Interface/IRuntimeModule.hpp
+
+../Framework/Interface/IRuntimeModule.hpp
+Interface.hpp
+../Framework/Interface/Interface.hpp
+
+../Framework/Interface/Interface.hpp
+
+/home/moebiusmeow/repo/MeoMilk/MeoMilk/Framework/Common/BaseApplication.cpp
+BaseApplication.hpp
+/home/moebiusmeow/repo/MeoMilk/MeoMilk/Framework/Common/BaseApplication.hpp
+
+/home/moebiusmeow/repo/MeoMilk/MeoMilk/Framework/Common/BaseApplication.hpp
+IApplication.hpp
+/home/moebiusmeow/repo/MeoMilk/MeoMilk/Framework/Common/IApplication.hpp
+
+/home/moebiusmeow/repo/MeoMilk/MeoMilk/Framework/Common/GraphicsManager.cpp
+GraphicsManager.hpp
+/home/moebiusmeow/repo/MeoMilk/MeoMilk/Framework/Common/GraphicsManager.hpp
+
+/home/moebiusmeow/repo/MeoMilk/MeoMilk/Framework/Common/GraphicsManager.hpp
+IRuntimeModule.hpp
+/home/moebiusmeow/repo/MeoMilk/MeoMilk/Framework/Common/IRuntimeModule.hpp
+
+/home/moebiusmeow/repo/MeoMilk/MeoMilk/Framework/Common/main.cpp
+cstdio
+-
+cstdlib
+-
+iostream
+-
+IApplication.hpp
+/home/moebiusmeow/repo/MeoMilk/MeoMilk/Framework/Common/IApplication.hpp
+

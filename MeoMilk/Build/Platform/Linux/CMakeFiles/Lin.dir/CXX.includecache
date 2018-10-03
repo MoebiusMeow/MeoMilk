@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/moebiusmeow/repo/MeoMilk/MeoMilk/Platform/Linux/testlin.cpp
+cstdio
+-
+cstdlib
+-
+cstring
+-
+X11/Xlib.h
+-
+X11/Xlib-xcb.h
+-
+xcb/xcb.h
+-
+GL/gl.h
+-
+GL/glx.h
+-
+GL/glu.h
+-
+
